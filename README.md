@@ -123,3 +123,51 @@
         return results;
     }
 ```
+
+## Lonely Integer
+```
+  public static int lonelyinteger(List<int> a)
+    {
+        int i = 0, j = 1, result = 0, count;
+        
+        for(i=0;i<a.Count;i++)
+        {
+            count = 0;
+            for(j=0;j<a.Count;j++)
+            {
+                if(a[i] == a[j])
+                {
+                    count++;
+                }
+            }
+            
+            if(count != 2)
+            {
+                result = a[i];                    
+            }
+        }
+        
+        return result;
+    }
+```
+
+## Diagonal Difference
+```
+  public static int diagonalDifference(List<List<int>> arr)
+    {
+        int prime_val = 0;
+        int sec_val = 0;
+        
+        for(int i=0;i<arr.Count;i++)
+        {
+            prime_val += arr[i][i];
+        }
+        
+        for(int i=0, j=arr.Count-1;i<arr.Count;i++,j--)
+        {
+            sec_val += arr[i][j];
+        }
+                
+        return sec_val - prime_val;
+    }
+```
