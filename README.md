@@ -2,6 +2,7 @@
 
 ## Plus Minus
 {
+```
   public static void plusMinus(List<int> arr)
     {
         double pos = 0;
@@ -28,6 +29,7 @@
         Console.WriteLine(neg / arr.Count);
         Console.WriteLine(zeros / arr.Count);
     }
+```
 }
                      
 ## Min Max Sum
