@@ -1,7 +1,6 @@
 # HackerRank solutions
 
 ## Plus Minus
-{
 ```
   public static void plusMinus(List<int> arr)
     {
@@ -30,10 +29,9 @@
         Console.WriteLine(zeros / arr.Count);
     }
 ```
-}
                      
 ## Min Max Sum
-{
+```
   public static void miniMaxSum(List<int> arr)
     {
         // sort the list
@@ -50,10 +48,10 @@
         
         Console.WriteLine($"{smallest_sum} {largest_sum}");
     }
-}
+```
                                         
 ## Time Conversion
-{
+```
   public static string timeConversion(string s)
     {   
         // get the hour
@@ -99,10 +97,10 @@
         
         return null;
     }
-}
+```
                                         
 ## Sparse Arrays
-{
+```
   public static List<int> matchingStrings(List<string> strings, List<string> queries)
     {
         List<int> results = new List<int>();
@@ -124,4 +122,4 @@
         
         return results;
     }
-}
+```
