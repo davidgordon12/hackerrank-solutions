@@ -1,5 +1,5 @@
 # HackerRank solutions
-#
+
 ## Plus Minus
 ```
   public static void plusMinus(List<int> arr)
