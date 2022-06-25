@@ -44,50 +44,27 @@
 ## Time Conversion
 ```
   public static string timeConversion(string s)
-    {   
-        // get the hour
-        int hour = Convert.ToInt32(s.Substring(0, 2));
-        
-        // remove the hour section
-        string newTime = s.Substring(2);
-        
-        // check if its AM or PM
-        bool morning = true;
-        
-        if(s[8] == 'P')
         {
-            morning = false;
+            int hr = 0;
+            string sfx = "";
+            hr = Convert.ToInt32(s.Substring(0, 2));
+            sfx = s.Substring(8, 2);
+
+            string hr_str = "12";
+
+            if (hr == 12 && sfx == "AM")
+                hr_str = "00";
+            if (hr != 12 && sfx == "PM")
+                hr_str = (hr + 12).ToString();
+            if (hr < 10 && sfx == "AM")
+                hr_str = $"0{hr}";
+            if (hr > 10 && hr < 12 && sfx == "AM")
+                hr_str = hr.ToString();
+
+            s = s.Remove(0, 2);
+            s = s.Remove(6, 2);
+            return $"{hr_str}{s}";
         }
-        
-        // remove AM/PM
-        newTime = s.Remove(8);
-        
-        // if it is 12 AM, convert to 00:
-        if(hour == 12 && s[8] == 'A')
-        {
-            return $"00{newTime.Remove(0,2)}";
-        }
-        
-        // if it is 12 PM
-        if(hour == 12 && s[8] == 'P')
-        {
-            return $"12{newTime.Remove(0,2)}";
-        }
-        
-        // if it is morning, return the time, nothing else needs to be done
-        if(morning == true)
-        {
-            return newTime;
-        }
-        
-        // if it is afternoon, do the conversion
-        else
-        {
-            return $"{12 + hour}{newTime.Remove(0,2)}";
-        }
-        
-        return null;
-    }
 ```
                                         
 ## Sparse Arrays
