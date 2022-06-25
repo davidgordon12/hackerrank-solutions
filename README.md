@@ -139,3 +139,13 @@
         return sec_val - prime_val;
     }
 ```
+
+## Find Median
+```
+public static int findMedian(List<int> arr)
+        {
+            arr.Sort();
+
+            return arr[(int)MathF.Round(arr.Count / 2)];
+        }
+```
