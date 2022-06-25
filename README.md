@@ -3,31 +3,22 @@
 ## Plus Minus
 ```
   public static void plusMinus(List<int> arr)
-    {
-        double pos = 0;
-        double neg = 0;
-        double zeros = 0;
-        
-        foreach(int n in arr)
         {
-            if(n == 0)
+            int pos = 0;
+            int neg = 0;
+
+            for (int i = 0; i < arr.Count; i++)
             {
-                zeros = zeros + 1;
+                if (arr[i] > 0)
+                    pos++;
+                if (arr[i] < 0)
+                    neg++;
             }
-            if(n > 0)
-            {
-                pos = pos + 1;
-            }
-            if(n < 0)
-            {
-                neg = neg + 1;
-            }
+
+            Console.WriteLine((float)pos / arr.Count);
+            Console.WriteLine((float)neg / arr.Count);
+            Console.WriteLine((float)((arr.Count - pos) - neg) / arr.Count);
         }
-        
-        Console.WriteLine(pos / arr.Count);
-        Console.WriteLine(neg / arr.Count);
-        Console.WriteLine(zeros / arr.Count);
-    }
 ```
                      
 ## Min Max Sum
